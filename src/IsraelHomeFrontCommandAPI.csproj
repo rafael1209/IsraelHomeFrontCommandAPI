@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Version>1.0.1</Version>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Title>Israel Home Front Command Alerts API Client</Title>
+		<Authors>Chasman</Authors>
+		<Description>A C# client for accessing real-time siren alerts and warnings issued by the Israel Defense Forces Home Front Command. This package provides tools for retrieving active alerts, including sirens and hostile aircraft threats, as well as a history of alerts across various cities.</Description>
+		<Copyright></Copyright>
+		<PackageProjectUrl>https://github.com/rafael1209/IsraelHomeFrontCommandAPI</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/rafael1209/IsraelHomeFrontCommandAPI</RepositoryUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>Pakar.png</PackageIcon>
+		<PackageTags>IDF, HomeFrontCommand, Israel, SirenAlerts, RealTimeAlerts, SirenAPI, CSharpClient, EmergencyAlerts, IDFAlerts, IsraelDefenseForces, WarningSystem, ThreatAlerts</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Pakar.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Update="README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+</Project>
