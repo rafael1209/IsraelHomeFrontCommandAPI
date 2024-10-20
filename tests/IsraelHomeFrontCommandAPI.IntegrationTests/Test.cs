@@ -13,5 +13,15 @@ namespace IsraelHomeFrontCommandAPI.IntegrationTests
 
             Assert.True(response != null);
         }
+
+        [Fact]
+        public async Task TestAlertsHistory()
+        {
+            HomeFrontCommandClient client = new HomeFrontCommandClient();
+
+            var response = await client.GetAlertsHistoryLastDayAsync();
+
+            Assert.True(response != null);
+        }
     }
 }

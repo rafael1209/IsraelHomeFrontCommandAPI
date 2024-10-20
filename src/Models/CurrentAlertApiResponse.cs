@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IsraelHomeFrontCommandAPI.Models
 {
-    public class ApiResponse
+    public class CurrentAlertApiResponse
     {
         public string? Id { get; set; }
         public int? Cat { get; set; }
