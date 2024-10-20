@@ -1,6 +1,3 @@
-Sure! Here’s an updated version of the README with an added "Usage Example" section that demonstrates how to use the `IsraelHomeFrontCommandAPI` library effectively:
-
-markdown
 # IsraelHomeFrontCommandAPI
 
 ## Overview
