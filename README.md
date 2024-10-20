@@ -115,7 +115,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [Israel Home Front Command](https://www.oref.org.il) for providing the API.
 - [Newtonsoft.Json](https://www.newtonsoft.com/json) for JSON serialization.
-```
 
 ### Notes
 
