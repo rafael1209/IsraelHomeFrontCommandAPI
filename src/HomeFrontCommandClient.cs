@@ -39,7 +39,9 @@ namespace IsraelHomeFrontCommandAPI
 
                 return new ActiveAlertsResponse()
                 {
-                    AlertType = apiResponse.Cat.HasValue ? (AlertType)apiResponse.Cat.Value : AlertType.Unknown
+                    AlertType = apiResponse.Cat.HasValue ? (AlertType)apiResponse.Cat.Value : AlertType.Unknown,
+                    Instructions = apiResponse.Desc,
+                    Cities = apiResponse.Data
                 };
             }
             catch (HttpRequestException httpEx)
