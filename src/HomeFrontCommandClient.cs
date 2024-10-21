@@ -84,24 +84,10 @@ namespace IsraelHomeFrontCommandAPI
 
                 foreach (var alert in apiResponse)
                 {
-                    AlertType alertType;
-                    switch (alert.Title)
-                    {
-                        case "ירי רקטות וטילים":
-                            alertType = AlertType.Missiles;
-                            break;
-                        case "חדירת כלי טיס עוין":
-                            alertType = AlertType.HostileAircraftIntrusion;
-                            break;
-                        default:
-                            alertType = AlertType.Unknown;
-                            break;
-                    }
-
                     alertHistory.Add(new AlertHistoryResponse()
                     {
                         AlertDateIst = alert.AlertDate,
-                        AlertType = alertType,
+                        AlertType = alert.Category.HasValue ? (HistoryAlertType)alert.Category.Value : HistoryAlertType.Unknown,
                         City = alert.Data
                     });
                 }

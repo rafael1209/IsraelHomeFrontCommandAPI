@@ -6,7 +6,7 @@ namespace IsraelHomeFrontCommandAPI.Models
     {
         public DateTime AlertDateIst {  get; set; }
 
-        public AlertType AlertType { get; set; }
+        public HistoryAlertType AlertType { get; set; }
 
         public string? City { get; set; }
     }
