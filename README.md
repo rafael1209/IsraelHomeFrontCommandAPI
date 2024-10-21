@@ -22,7 +22,7 @@ Install-Package IsraelHomeFrontCommandAPI
 Or add it to your `.csproj` file:
 
 ```xml
-<PackageReference Include="IsraelHomeFrontCommandAPI" Version="ENTER_THE_LAST" />
+<PackageReference Include="IsraelHomeFrontCommandAPI" Version="2.0.1" />
 ```
 
 ## Usage
