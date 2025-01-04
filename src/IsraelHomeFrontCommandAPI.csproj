@@ -33,6 +33,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<None Update="cities.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
 		<None Update="Pakar.png">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>

@@ -1,5 +1,6 @@
 ﻿using IsraelHomeFrontCommandAPI.Enums;
 using IsraelHomeFrontCommandAPI.Models;
+using IsraelHomeFrontCommandAPI.Services;
 using Newtonsoft.Json;
 
 namespace IsraelHomeFrontCommandAPI
@@ -8,13 +9,13 @@ namespace IsraelHomeFrontCommandAPI
     {
         private readonly HttpClient _httpClient;
         private readonly Language _language;
+        private readonly CityService _cityService;
 
         public HomeFrontCommandClient(Language language = Language.Hebrew)
         {
             _httpClient = new HttpClient();
-
             _httpClient.BaseAddress = new Uri("https://www.oref.org.il/warningMessages/alert/");
-
+            _cityService = new CityService("cities.json");
             _language = language;
         }
 
@@ -45,6 +46,8 @@ namespace IsraelHomeFrontCommandAPI
                     AlertType = apiResponse.Cat.HasValue ? (AlertType)apiResponse.Cat.Value : AlertType.Unknown,
                     Instructions = apiResponse.Desc,
                     Cities = apiResponse.Data
+                        .Select(city => _cityService.GetCityNameByLanguage(city, _language))
+                        .ToList()
                 };
             }
             catch (HttpRequestException httpEx)
@@ -91,7 +94,7 @@ namespace IsraelHomeFrontCommandAPI
                     {
                         AlertDateIst = alert.AlertDate,
                         AlertType = alert.Category.HasValue ? (HistoryAlertType)alert.Category.Value : HistoryAlertType.Unknown,
-                        City = alert.Data
+                        City = _cityService.GetCityNameByLanguage(alert.Data, _language) 
                     });
                 }
 

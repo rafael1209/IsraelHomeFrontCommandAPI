@@ -22,4 +22,10 @@
 		<ProjectReference Include="..\..\src\IsraelHomeFrontCommandAPI.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Update="cities.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
 </Project>

@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using IsraelHomeFrontCommandAPI.Enums;
+using Xunit;
 
 namespace IsraelHomeFrontCommandAPI.IntegrationTests
 {
@@ -17,7 +18,7 @@ namespace IsraelHomeFrontCommandAPI.IntegrationTests
         [Fact]
         public async Task TestAlertsHistory()
         {
-            HomeFrontCommandClient client = new HomeFrontCommandClient();
+            HomeFrontCommandClient client = new HomeFrontCommandClient(Language.Russian);
 
             var response = await client.GetAlertsHistoryLastDayAsync();
 

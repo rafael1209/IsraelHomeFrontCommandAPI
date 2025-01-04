@@ -6,7 +6,7 @@
 
         public string? Title { get; set; }
 
-        public string? Data {  get; set; }
+        public required string Data {  get; set; }
 
         public int? Category { get; set; }
     }
