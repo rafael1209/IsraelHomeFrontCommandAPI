@@ -30,7 +30,7 @@ namespace IsraelHomeFrontCommandAPI
 
                 var jsonResponse = await response.Content.ReadAsStringAsync();
 
-                CurrentAlertApiResponse? apiResponse = JsonConvert.DeserializeObject<CurrentAlertApiResponse>(jsonResponse);
+                var apiResponse = JsonConvert.DeserializeObject<CurrentAlertApiResponse>(jsonResponse);
 
                 if (apiResponse == null)
                 {
@@ -66,7 +66,7 @@ namespace IsraelHomeFrontCommandAPI
         /// <exception cref="JsonSerializationException">Thrown when deserialization of the JSON response fails.</exception>
         public async Task<List<AlertHistoryResponse>> GetAlertsHistoryLastDayAsync()
         {
-            List<AlertHistoryResponse> alertHistory = new List<AlertHistoryResponse>();
+            List<AlertHistoryResponse> alertHistory = [];
 
             try
             {
@@ -75,7 +75,7 @@ namespace IsraelHomeFrontCommandAPI
 
                 var jsonResponse = await response.Content.ReadAsStringAsync();
 
-                List<AlertData>? apiResponse = JsonConvert.DeserializeObject<List<AlertData>>(jsonResponse);
+                var apiResponse = JsonConvert.DeserializeObject<List<AlertData>>(jsonResponse);
 
                 if (apiResponse == null || !apiResponse.Any())
                 {
