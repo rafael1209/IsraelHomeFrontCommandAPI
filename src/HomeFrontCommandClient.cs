@@ -7,12 +7,15 @@ namespace IsraelHomeFrontCommandAPI
     public class HomeFrontCommandClient
     {
         private readonly HttpClient _httpClient;
+        private readonly Language _language;
 
-        public HomeFrontCommandClient()
+        public HomeFrontCommandClient(Language language = Language.Hebrew)
         {
             _httpClient = new HttpClient();
 
             _httpClient.BaseAddress = new Uri("https://www.oref.org.il/warningMessages/alert/");
+
+            _language = language;
         }
 
         /// <summary>
