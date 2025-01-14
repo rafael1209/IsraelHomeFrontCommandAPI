@@ -25,7 +25,7 @@ namespace IsraelHomeFrontCommandAPI.Services
             var city = _cities.FirstOrDefault(c => c.Name == cityNameInHebrew);
 
             if (city == null)
-                throw new ArgumentException($"City with name '{cityNameInHebrew}' not found.");
+                return cityNameInHebrew;
 
             return language switch
             {
