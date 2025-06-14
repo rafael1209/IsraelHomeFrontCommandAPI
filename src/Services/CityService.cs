@@ -1,23 +1,20 @@
 ﻿using IsraelHomeFrontCommandAPI.Enums;
 using IsraelHomeFrontCommandAPI.Models;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IsraelHomeFrontCommandAPI.Services
 {
 
     public class CityService
     {
-        private readonly List<City> _cities;
+        private readonly CitiesTranslateApiResponse _cities;
+        private readonly Language _language;
 
-        public CityService(string filePath)
+        public CityService(Language language)
         {
-            var jsonContent = File.ReadAllText(filePath);
-            _cities = JsonConvert.DeserializeObject<List<City>>(jsonContent) ?? [];
+            var jsonContent = File.ReadAllText($"https://alerts-history.oref.org.il/Shared/Ajax/GetDistricts.aspx?lang={language.ToString()}");// Todo: right lang code. 20/01/2025 Rafael
+            _cities = JsonConvert.DeserializeObject<CitiesTranslateApiResponse>(jsonContent);
+            _language = language;
         }
 
         public string GetCityNameByLanguage(string cityNameInHebrew, Language language)
